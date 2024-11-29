@@ -1,0 +1,83 @@
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+local Window = Rayfield:CreateWindow({
+    Name = "PanMan HUB",
+    Icon = 0, -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
+    LoadingTitle = "PanManHub",
+    LoadingSubtitle = "by PanMan",
+    Theme = "DarkBlue", -- Check https://docs.sirius.menu/rayfield/configuration/themes
+ 
+    DisableRayfieldPrompts = false,
+    DisableBuildWarnings = false, -- Prevents Rayfield from warning when the script has a version mismatch with the interface
+ 
+    ConfigurationSaving = {
+       Enabled = true,
+       FolderName = nil, 
+       FileName = "PanMan hub"
+    },
+ 
+    Discord = {
+       Enabled = false, 
+       Invite = "https://discord.gg/tUTwmCMWuu", 
+       RememberJoins = true 
+    },
+ 
+    KeySystem = true, 
+    KeySettings = {
+       Title = "Untitled",
+       Subtitle = "Key System",
+       Note = "No method of obtaining the key is provided", 
+       FileName = "Key", 
+       SaveKey = true, 
+       GrabKeyFromSite = false, 
+       Key = {"PanMan"} 
+    }
+ })
+ local UniversalTab = Window:CreateTab("Universal", 4483362458) -- Inf Yeld Tab 1
+ local Button = UniversalTab:CreateButton({
+    Name = "Inf Yeld",
+    Callback = function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/edgeiy/infiniteyield/master/source'))("")
+    end,
+ })
+ local Button = UniversalTab:CreateButton({
+    Name = "ChatBypass",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/AlgariBot/lua/refs/heads/Lua-Script-Executor/LocalNeverPatchedBypass.txt"))()
+    end,
+ })
+ local Slider = UniversalTab:CreateSlider({ -- WalkSpeed
+    Name = "WalkSpeed",
+    Range = {0, 100},
+    Increment = 1,
+    Suffix = "Speed",
+    CurrentValue = 16,
+    Flag = "walkspeed", 
+    Callback = function(Value)
+       game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+    end,
+ })
+ local Slider = UniversalTab:CreateSlider({ -- WalkSpeed
+ Name = "JumpPower",
+ Range = {0, 300},
+ Increment = 1,
+ Suffix = "JumpPower",
+ CurrentValue = 40,
+ Flag = "JumpPower", 
+ Callback = function(Value)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+ end,
+})
+local UniversalTab = Window:CreateTab("Discord", 119381668243234) -- Discord Tab1
+local Button = UniversalTab:CreateButton({
+   Name = "Discord",
+   Callback = function()
+       setclipboard("https://discord.gg/m3JVdggg")
+       toclipboard("https://discord.gg/m3JVdggg")
+       Rayfield:Notify({
+         Title="Discord Invite",
+         Content = "Copied To Clipboard",
+         Duration = 3.5,
+         Image = 4483362458,
+      })
+   end,
+   })
