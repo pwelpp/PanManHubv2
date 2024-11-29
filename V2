@@ -16,7 +16,7 @@ local Window = Rayfield:CreateWindow({
     },
  
     Discord = {
-       Enabled = true, 
+       Enabled = false, 
        Invite = "https://discord.gg/tUTwmCMWuu", 
        RememberJoins = true 
     },
@@ -25,9 +25,9 @@ local Window = Rayfield:CreateWindow({
     KeySettings = {
        Title = "Untitled",
        Subtitle = "Key System",
-       Note = "", 
+       Note = "Go to https://discord.gg/m3JVdggg to get key", 
        FileName = "Key", 
-       SaveKey = false, 
+       SaveKey = True, 
        GrabKeyFromSite = false, 
        Key = {"PanMan123"} 
     }
@@ -87,10 +87,30 @@ local Button = UniversalTab:CreateButton({
       })
    end,
    })
-local Tab = Window:CreateTab("Thief Life", 4483362458) -- Title, Image
+local Tab = Window:CreateTab("Thief Life", 4483362458) -- Thief Life
 local Button = Tab:CreateButton({
    Name = "Delete Vip Door",
    Callback = function()
    Game.Workspace.Camera.AccessWalls.VIP:Destroy()
    end,
+})
+local Button = Tab:CreateButton({
+   Name = "Delete Vip Safe",
+   Callback = function()
+      for i, v in ipairs(workspace:GetDescendants()) do
+         if v.Name == "Safe" then
+             v:Destroy()
+         end
+     end
+   end,
+})
+local Input = Tab:CreateInput({
+   Name = "Request Loot",
+   CurrentValue = "",
+   PlaceholderText = "Number",
+   RemoveTextAfterFocusLost = false,
+   Flag = "Input1",
+   Callback = function(Text)
+          game.ReplicatedStorage.Events.Loot.RequestLoot:FireServer(Text)
+      end,
 })
