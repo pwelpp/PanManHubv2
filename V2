@@ -47,9 +47,9 @@ local Window = Rayfield:CreateWindow({
     end,
  })
  local Button = UniversalTab:CreateButton({
-   Name = "ChatBypass",
+   Name = "Dex",
    Callback = function()
-      loadstring(game:HttpGet('https://github.com/pwelpp/Dex/blob/main/NotMine!'))()
+      loadstring(game:HttpGet('https://raw.githubusercontent.com/pwelpp/Dex/refs/heads/main/NotMine!'))()
    end,
 })
  local Slider = UniversalTab:CreateSlider({ -- WalkSpeed
