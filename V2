@@ -16,16 +16,16 @@ local Window = Rayfield:CreateWindow({
     },
  
     Discord = {
-       Enabled = false, 
+       Enabled = true, 
        Invite = "https://discord.gg/tUTwmCMWuu", 
        RememberJoins = true 
     },
  
-    KeySystem = true, 
+    KeySystem = false, 
     KeySettings = {
        Title = "Untitled",
        Subtitle = "Key System",
-       Note = "Go to https://discord.gg/m3JVdggg to get key", 
+       Note = "", 
        FileName = "Key", 
        SaveKey = false, 
        GrabKeyFromSite = false, 
@@ -63,7 +63,7 @@ local Window = Rayfield:CreateWindow({
        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
     end,
  })
- local Slider = UniversalTab:CreateSlider({ -- WalkSpeed
+ local Slider = UniversalTab:CreateSlider({ -- JumpPower
  Name = "JumpPower",
  Range = {0, 300},
  Increment = 1,
@@ -74,14 +74,6 @@ local Window = Rayfield:CreateWindow({
     game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
  end,
 })
-local Tab = Window:CreateTab("Thief Life", 4483362458) -- Title, Image
-local Button = Tab:CreateButton({
-   Name = "Delete Vip Door",
-   Callback = function()
-   Game.Workspace.Camera.AccessWalls.VIP:Destroy()
-   end,
-})
-local UniversalTab = Window:CreateTab("Discord", 119381668243234) -- Discord Tab1
 local Button = UniversalTab:CreateButton({
    Name = "Discord",
    Callback = function()
@@ -95,3 +87,10 @@ local Button = UniversalTab:CreateButton({
       })
    end,
    })
+local Tab = Window:CreateTab("Thief Life", 4483362458) -- Title, Image
+local Button = Tab:CreateButton({
+   Name = "Delete Vip Door",
+   Callback = function()
+   Game.Workspace.Camera.AccessWalls.VIP:Destroy()
+   end,
+})
