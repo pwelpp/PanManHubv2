@@ -32,6 +32,7 @@ local Window = Rayfield:CreateWindow({
        Key = {"PanMan"} 
     }
  })
+
  local UniversalTab = Window:CreateTab("Universal", 4483362458) -- Inf Yeld Tab 1
  local Button = UniversalTab:CreateButton({
     Name = "Inf Yeld",
@@ -45,6 +46,12 @@ local Window = Rayfield:CreateWindow({
         loadstring(game:HttpGet("https://raw.githubusercontent.com/AlgariBot/lua/refs/heads/Lua-Script-Executor/LocalNeverPatchedBypass.txt"))()
     end,
  })
+ local Button = UniversalTab:CreateButton({
+   Name = "ChatBypass",
+   Callback = function()
+      loadstring(game:HttpGet('https://github.com/pwelpp/Dex/blob/main/NotMine!'))()
+   end,
+})
  local Slider = UniversalTab:CreateSlider({ -- WalkSpeed
     Name = "WalkSpeed",
     Range = {0, 100},
