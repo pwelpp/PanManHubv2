@@ -1,4 +1,4 @@
-local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/CYJANK0WY/1342515-5/refs/heads/main/e12345%405%601'))()
 local Window = Rayfield:CreateWindow({
     Name = "PanMan HUB",
     Icon = 0, -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
@@ -25,7 +25,7 @@ local Window = Rayfield:CreateWindow({
     KeySettings = {
        Title = "Untitled",
        Subtitle = "Key System",
-       Note = "No method of obtaining the key is provided", 
+       Note = "Go to https://discord.gg/m3JVdggg to get key", 
        FileName = "Key", 
        SaveKey = false, 
        GrabKeyFromSite = false, 
@@ -73,6 +73,13 @@ local Window = Rayfield:CreateWindow({
  Callback = function(Value)
     game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
  end,
+})
+local Tab = Window:CreateTab("Thief Life", 4483362458) -- Title, Image
+local Button = Tab:CreateButton({
+   Name = "Delete Vip Door",
+   Callback = function()
+   Game.Workspace.Camera.AccessWalls.VIP:Destroy()
+   end,
 })
 local UniversalTab = Window:CreateTab("Discord", 119381668243234) -- Discord Tab1
 local Button = UniversalTab:CreateButton({
